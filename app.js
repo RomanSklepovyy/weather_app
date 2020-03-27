@@ -1,5 +1,6 @@
 const request = require('request');
-
+const geocode = require('./utils/geocode');
+/*
 const url = 'https://api.darksky.net/forecast/2f067ec8fbe228f0f63e90066b5715e0/37.8267,-122.4233?units=si&lang=uk';
 
 request({ url: url, json: true }, (error, response) => {
@@ -14,18 +15,15 @@ request({ url: url, json: true }, (error, response) => {
     }
 
 });
+*/
 
-const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoicm9tYW5za2xlcG92eXkiLCJhIjoiY2s4YWF1azR1MDBkcTNobHZuOWY0eTI4NSJ9.zK9ut6YQFAKXqqfvrUtdDA&limit=1';
-request({ url: geocodeURL, json: true }, (error, response) => {
+
+geocode('Kyiv', (error, data) => {
+
     if (error) {
-        console.log('Unable connect to weather service!');
+        console.log(error);
+    } else if (data) {
+        console.log(data);
     }
-    else if (response.body.features.length === 0) {
-        console.log('Unable to find location!');
-    }
-    else {
-        const latitude = response.body.features[0].center[1];
-        const longitude = response.body.features[0].center[0];
-        console.log(latitude, ', ', longitude);
-    }
+
 });
