@@ -1,0 +1,20 @@
+const request = require('request');
+
+const forecast = (latitude, longitude, callback) => {
+    const url = `https://api.darksky.net/forecast/2f067ec8fbe228f0f63e90066b5715e0/${latitude},${longitude}?units=si&lang=uk`;
+
+    request({ url: url, json: true }, (error, response) => {
+        if (error) {
+            callback('Unable connect to weather service!', undefined);
+        }
+        else if (response.body.error) {
+            callback('Unable to find location!', undefined);
+        }
+        else {
+            callback(undefined, response.body.currently);
+        }
+
+    });
+};
+
+module.exports = forecast;
