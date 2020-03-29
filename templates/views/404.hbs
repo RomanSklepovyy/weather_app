@@ -5,22 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>404</title>
+    <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-{{>header}}
-    <div class="container">
-        <div class="row">
-            <div class="xs-12 md-6 mx-auto">
-                <div id="countUp">
-                    <div class="number-404">404</div>
-                    <div class="text-404">{{errorMessage}}</div>
-
-                </div>
-            </div>
-        </div>
+    <div class="main-content">
+        {{>header}}
+         <p>{{errormessage}}</p>
     </div>
-{{>footer}}
+
+    {{>footer}}
 </body>
 </html>
