@@ -22,23 +22,20 @@ app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather',
-        name: 'Roman Sklepovyy'
+        title: 'Weather'
     })
 });
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
-        name: 'Roman Sklepovyy'
+        title: 'About Me'
     })
 });
 
 app.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpful text.',
-        title: 'Help',
-        name: 'Roman Sklepovyy'
+        title: 'Help'
     })
 });
 
@@ -47,6 +44,18 @@ app.get('/weather', (req, res) => {
         forecast: 'It is snowing',
         location: 'Ivano-Frankivsk'
     })
+});
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        errorMessage: 'Help article not found'
+    });
+});
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        errorMessage: 'Page not found'
+    });
 });
 
 app.listen(3000, () => {
