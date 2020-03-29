@@ -64,13 +64,6 @@ app.get('/weather', (req, res) => {
             });
         });
     });
-/*
-    res.send({
-        forecast: '',
-        location: '',
-        address: req.query.address
-    });
- */
 });
 
 app.get('/help/*', (req, res) => {
