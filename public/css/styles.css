@@ -43,7 +43,22 @@ header a {
     width: 250px;
 }
 
+input, button {
+    outline: none;
+    font-size: 16px;
+}
 
+input {
+    padding: 8px;
+    border: 1px solid #cccccc;
+}
+button {
+    background-color: #888888;
+    cursor: pointer;
+    color: white;
+    border: 1px solid #888888;
+    padding: 8px;
+}
 
 .number-404 {
     font-family: "Roboto Mono", "Liberation Mono", Consolas, monospace;
