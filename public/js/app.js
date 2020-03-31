@@ -56,8 +56,8 @@ const renderDaily = (data) => {
         `<div class="daily">
             <p><b>${timeConverter(time, 'date')}</b></p>
             <p>${summary}</p>
-            <p>Max: ${temperatureMax}°C at: ${temperatureMaxTime}</p>
-            <p>Min: ${temperatureMin}°C at: ${temperatureMinTime}</p>
+            <p>Max: ${temperatureMax}°C at: ${timeConverter(temperatureMaxTime, 'time')}</p>
+            <p>Min: ${temperatureMin}°C at: ${timeConverter(temperatureMinTime, 'time')}</p>
             <p>Chance of ${precipType} ${precipProbability}%</p>
             <p>Wind speed: ${windSpeed} m/s</p>
             <p>Pressure: ${pressure} Hectopascals</p>
