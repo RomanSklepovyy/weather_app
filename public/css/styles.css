@@ -66,6 +66,14 @@ a {
     font-weight: 600;
 }
 
+.currently, .daily {
+    width: 278px;
+    padding: 5px;
+    margin: 20px 0;
+    border: 2px #eeeeee solid;
+    border-radius: 3px;
+}
+
 .number-404 {
     font-family: "Roboto Mono", "Liberation Mono", Consolas, monospace;
     font-size: 4rem;
